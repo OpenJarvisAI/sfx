@@ -1,3 +1,13 @@
+# SFX
+
+Implements SFX which uses a 4B VLM as system2 model, it first training system2 with rough action prediction, then implys a system1 which predicts a asynmetrical inference between them.
+
+
+
+--------
+
+
+
 <div align="center">
 
 # Hume: Introducing System-2 Thinking in Visual-Language-Action Model

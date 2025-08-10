@@ -14,9 +14,9 @@ GPUS=${GPUS:-2}
 GPUS_PER_NODE=${GPUS_PER_NODE:-2}
 NODES=$((GPUS / GPUS_PER_NODE))
 PER_DEVICE_BATCH_SIZE=${PER_DEVICE_BATCH_SIZE:-32}
-wandb_enable=${wandb_enable:-true}
+wandb_enable=${wandb_enable:-false}
 num_workers=${num_workers:-0}
-save_freq=${save_freq:-5000}
+save_freq=${save_freq:-1000}
 
 # set environments
 source scripts/env.sh
@@ -71,7 +71,7 @@ accelerate launch $ACCELERATE_ARGS src/hume/training/train_s2.py \
   --wandb.disable_artifact=true \
   --wandb.project=${WANDB_PROJECT} \
   --wandb.entity=${WANDB_ENTITY} \
-  --checkpoints_total_limit=0 \
+  --checkpoints_total_limit=2 \
   --dataset.video_backend="pyav" \
   --policy.path=$pretrained_policy \
 
