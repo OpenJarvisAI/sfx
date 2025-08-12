@@ -1,7 +1,13 @@
 # SFX
 
-Implements SFX which uses a 4B VLM as system2 model, it first training system2 with rough action prediction, then implys a system1 which predicts a asynmetrical inference between them.
+It implements SFX, which uses a 4B VLM as the System 2 model. First, it trains System 2 with rough action prediction, then applies a System 1 model that predicts an asymmetric inference between them.
 
+
+Todos:
+
+- [ ] Train SFX on Qiuzhi data, verify the effectiveness of system2 (slow model);
+- [ ] Further finetune the VQH, verify the fast part;
+- [ ] Implement the slow + fast inference, make it more capable.
 
 
 --------
